@@ -109,8 +109,8 @@ names(agg.weekend) <- c("interval", "steps")
 agg.weekend$time<-parse_date_time(agg.weekend$interval, c("%H%M", "%M"))
 
 par(mfrow=c(1,2))
-plot(agg.workday$time, agg.workday$steps, ylim=c(0, 250))
-plot(agg.weekend$time, agg.weekend$steps, ylim=c(0, 250))
+plot(agg.workday$time, agg.workday$steps, ylim=c(0, 250), xlab="Time", ylab="Steps", main="Working days")
+plot(agg.weekend$time, agg.weekend$steps, ylim=c(0, 250), xlab="Time", ylab="Steps", main="Weekend")
 ```
 
 We can see that activity distribution during a day differs on type of a day. On working days people get up earlier, then commute (some part of commuting is walking), walk a bit during their work, then get back home (in the evening they are tired that's walk less and take public transportaion). During weekend, people get up later, walk a lot during a day, and the distribution of activity is more even. Local minima are probably associated with meals.   

@@ -168,8 +168,8 @@ names(agg.weekend) <- c("interval", "steps")
 agg.weekend$time<-parse_date_time(agg.weekend$interval, c("%H%M", "%M"))
 
 par(mfrow=c(1,2))
-plot(agg.workday$time, agg.workday$steps, ylim=c(0, 250))
-plot(agg.weekend$time, agg.weekend$steps, ylim=c(0, 250))
+plot(agg.workday$time, agg.workday$steps, ylim=c(0, 250), xlab="Time", ylab="Steps", main="Working days")
+plot(agg.weekend$time, agg.weekend$steps, ylim=c(0, 250), xlab="Time", ylab="Steps", main="Weekend")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
