@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 ###Loading and preprocessing the data###
 
@@ -22,7 +27,7 @@ names(agg.date) <- c("Date", "steps")
 hist(agg.date$steps, xlab="Steps per day", main="Steps per day distribution")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 Then we take mean and median of daily values:
 
@@ -57,7 +62,7 @@ agg.interval$time<-parse_date_time(agg.interval$interval, c("%H%M", "%M"))
 plot(agg.interval$time, agg.interval$steps, type="l", ylab="Steps", xlab="Time", main="Average daily activity pattern")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 Next task is to find the largest number of steps and determine when it happened.
 
@@ -122,7 +127,7 @@ names(agg.na.date) <- c("Date", "steps")
 hist(agg.na.date$steps, xlab="Steps per day", main="Steps per day distribution (no NAs)")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 Again, we take mean and median of daily values:
 
@@ -172,6 +177,6 @@ plot(agg.workday$time, agg.workday$steps, ylim=c(0, 250), xlab="Time", ylab="Ste
 plot(agg.weekend$time, agg.weekend$steps, ylim=c(0, 250), xlab="Time", ylab="Steps", main="Weekend")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
 
 We can see that activity distribution during a day differs on type of a day. On working days people get up earlier, then commute (some part of commuting is walking), walk a bit during their work, then get back home (in the evening they are tired that's walk less and take public transportaion). During weekend, people get up later, walk a lot during a day, and the distribution of activity is more even. Local minima are probably associated with meals.   
